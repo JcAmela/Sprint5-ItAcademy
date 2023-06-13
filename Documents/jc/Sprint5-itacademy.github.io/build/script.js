@@ -3,6 +3,7 @@
 let boton = document.getElementById("boton")
 let respuesta = document.getElementById("respuesta")
 boton.onclick = peticionApi
+let arrayDeChistes = []
 
 //*** async function / petición API ***//
 async function peticionApi(){
@@ -22,7 +23,8 @@ async function peticionApi(){
     }
  
 }
-//  **** FUNCION QUE EJECUTA EL CONTENIDO DE LA API ****
+//  **** FUNCION QUE PINTA EL CHISTE DE LA API ****
 function siguiente_boton(element){
 respuesta.innerHTML=element
 }
+
