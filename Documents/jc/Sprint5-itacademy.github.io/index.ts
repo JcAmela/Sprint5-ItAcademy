@@ -1,0 +1,1 @@
+// interfaz para saber como quieres que te pinte el json de la api

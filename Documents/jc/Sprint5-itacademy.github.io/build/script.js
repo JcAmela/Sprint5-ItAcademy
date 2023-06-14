@@ -4,7 +4,9 @@ let boton = document.getElementById("boton")
 let respuesta = document.getElementById("respuesta")
 boton.onclick = peticionApi
 let arrayDeChistes = []
-
+let rank =[]
+let saveObjects=[];
+let arrayScores=[];
 //*** async function / petición API ***//
 async function peticionApi(){
 
@@ -15,7 +17,9 @@ async function peticionApi(){
         }
     })
         let data = await chiste.json()
-        siguiente_boton(data.joke)
+        mostrar_chiste(data.joke)
+        guardarDatos(data)
+
         return data.joke 
 
     } catch (error) {
@@ -23,8 +27,24 @@ async function peticionApi(){
     }
  
 }
-//  **** FUNCION QUE PINTA EL CHISTE DE LA API ****
-function siguiente_boton(element){
-respuesta.innerHTML=element
+//  **** funcion que pinta el chiste de la api ****
+function mostrar_chiste(mostrarChiste){
+respuesta.innerHTML=mostrarChiste
 }
 
+// guardar toda la informacion de la api en el array de objetos: saveObjects
+function guardarDatos(datos){
+    saveObjects.push(datos)
+    console.log('informacion de la api completa y guardada' + saveObjects)
+}
+
+// funcion que asigna los score clicado y enseña el array con  //
+function mostrar_score(clicado){
+    let ranking = [...saveObjects]
+    arrayScores = ranking.map(e =>{
+        e.score = clicado
+        rank.push(e)
+        console.log(rank)
+    })
+    
+}
