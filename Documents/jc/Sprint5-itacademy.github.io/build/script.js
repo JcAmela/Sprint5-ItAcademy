@@ -2,49 +2,47 @@
 
 let boton = document.getElementById("boton")
 let respuesta = document.getElementById("respuesta")
+let saveObjects = [];
+let ranking = [];
 boton.onclick = peticionApi
-let arrayDeChistes = []
-let rank =[]
-let saveObjects=[];
-let arrayScores=[];
 //*** async function / petición API ***//
-async function peticionApi(){
+async function peticionApi() {
 
     try {
-        let chiste = await fetch('https://icanhazdadjoke.com/', {
+        const API_URL = await fetch('https://icanhazdadjoke.com/', {
             headers: {
-            'accept': 'application/json'
-        }
-    })
-        let data = await chiste.json()
-        mostrar_chiste(data.joke)
+                'accept': 'application/json'
+            }
+        })
+        let data = await API_URL.json()
         guardarDatos(data)
+        mostrar_chiste(data.joke)
 
-        return data.joke 
+
+        return data.joke
 
     } catch (error) {
         console.log('el error es el: ' + error)
     }
- 
+
 }
-//  **** funcion que pinta el chiste de la api ****
-function mostrar_chiste(mostrarChiste){
-respuesta.innerHTML=mostrarChiste
+//  Pinta el chiste de la api
+function mostrar_chiste(mostrarChiste) {
+    respuesta.innerHTML = mostrarChiste
 }
 
-// guardar toda la informacion de la api en el array de objetos: saveObjects
-function guardarDatos(datos){
+// creo el array de objetos: saveObjects que guarda todos los objetos obtenidos por la api
+function guardarDatos(datos) {
     saveObjects.push(datos)
-    console.log('informacion de la api completa y guardada' + saveObjects)
 }
 
-// funcion que asigna los score clicado y enseña el array con  //
-function mostrar_score(clicado){
-    let ranking = [...saveObjects]
-    arrayScores = ranking.map(e =>{
-        e.score = clicado
-        rank.push(e)
-        console.log(rank)
-    })
-    
+function asignar_score(clicado) {
+    saveObjects.forEach(e => {
+        if (e.score === undefined) {
+            let i = {...e}
+        i.score = clicado
+        ranking.push(i)
+        console.log(ranking)
+        }
+    });
 }
