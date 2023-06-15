@@ -5,6 +5,7 @@ let respuesta = document.getElementById("respuesta")
 let saveObjects = [];
 let ranking = [];
 boton.onclick = peticionApi
+
 //*** async function / petición API ***//
 async function peticionApi() {
 
@@ -26,6 +27,7 @@ async function peticionApi() {
     }
 
 }
+
 //  Pinta el chiste de la api
 function mostrar_chiste(mostrarChiste) {
     respuesta.innerHTML = mostrarChiste
@@ -36,13 +38,14 @@ function guardarDatos(datos) {
     saveObjects.push(datos)
 }
 
+// se le asigna el score al nuevo objeto y se le sobrescribe el score al anterior, y tambien lo borra
 function asignar_score(clicado) {
-    saveObjects.forEach(e => {
-        if (e.score === undefined) {
-            let i = {...e}
-        i.score = clicado
-        ranking.push(i)
-        console.log(ranking)
-        }
-    });
+    let ultimo_objeto = saveObjects[saveObjects.length - 1];
+    if (ultimo_objeto.score === undefined) {
+        let obj = { ...ultimo_objeto }
+        obj.score = clicado
+        ranking = ranking.filter(o => o.id != obj.id)
+        ranking.push(obj)
+    }
+    console.log(ranking)
 }
