@@ -69,3 +69,17 @@ button:hover {
     border-radius: 4px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
 }
+
+#tiempo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3C415C;
+    font-size: 1.1em;
+    padding: 15px;
+    background-color: #B8C5D6;
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}

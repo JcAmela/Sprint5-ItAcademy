@@ -1,14 +1,13 @@
 // DOM //
-
-let boton = document.getElementById("boton")
-let respuesta = document.getElementById("respuesta")
 let reportAcudits = [];
 let reportJokes = [];
+let boton = document.getElementById("boton")
+let respuesta = document.getElementById("respuesta")
 let contenido_div = document.getElementById("scores_button")
-boton.onclick = peticionApi
+boton.onclick = chistesItAcademyApi;
 
-// async function / petición API //
-async function peticionApi() {
+// petición a la api de chistes proporcionado por It Academy //
+async function chistesItAcademyApi() {
 
     try {
         const API_URL = await fetch('https://icanhazdadjoke.com/', {
@@ -18,9 +17,6 @@ async function peticionApi() {
         })
         let data = await API_URL.json()
         guardarDatos(data)
-        mostrar_chiste(data.joke)
-
-
         return data.joke
 
     } catch (error) {
@@ -39,18 +35,24 @@ function mostrar_chiste(mostrarChiste) {
     }
 }
 
-//  Pinta los botones del score
+//  Pinta los botones del score ademas de asignarle el valor del boton clicado al evento onclic
 function pintar_botones() {
     contenido_div.innerHTML =
-        `<button id="like" class="col-3" onclick="asignar_score(1)"><i class="fas fa-smile fa-2x"></i></button>
-    <button id="igual" class="col-3" onclick="asignar_score(2)"><i class="fas fa-meh fa-2x"></i></button>
-    <button id="dissLike" class="col-3" onclick="asignar_score(3)"><i class="fas fa-frown fa-2x"></i></button>`
+        `<button id="like" class="col-3"><i class="fas fa-smile fa-2x"></i></button>
+        <button id="igual" class="col-3"><i class="fas fa-meh fa-2x"></i></button>
+        <button id="dissLike" class="col-3"><i class="fas fa-frown fa-2x"></i></button>`
+
+    document.getElementById('like').addEventListener('onclick', () => asignar_score(1));
+    document.getElementById('igual').addEventListener('onclick', () => asignar_score(2));
+    document.getElementById('dissLike').addEventListener('onclick', () => asignar_score(3));
 }
+
 
 
 // creo el array de objetos:  reportAcudits que guarda todos los objetos obtenidos por la api
 function guardarDatos(datos) {
     reportAcudits.push(datos)
+    mostrar_chiste(datos.joke)
 }
 
 // se le asigna el score al nuevo objeto y se le sobrescribe el score al anterior, y tambien lo borra
@@ -71,10 +73,8 @@ function fecha_valoracion() {
     console.log(reportJokes)
     return reportJokes
 }
-
-async function tiempo() {
-
-    const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13';
+async function apiWeather() {
+    const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=84.123.164.93';
     const options = {
         method: 'GET',
         headers: {
@@ -85,10 +85,13 @@ async function tiempo() {
 
     try {
         const response = await fetch(url, options);
-        const result = await response.text();
-
+        const result = await response.json();
+        tiempo(result);
     } catch (error) {
         console.error(error);
     }
-
+}
+apiWeather()
+function tiempo(informacion) {
+    document.getElementById("tiempo").innerHTML=`Hoy en ${informacion.location.name} hace una temperatura de: ${informacion.current.temp_c}ºC a tiempo real. <br> Según la información proporcionada por: https://rapidapi.com/weatherapi.`
 }
