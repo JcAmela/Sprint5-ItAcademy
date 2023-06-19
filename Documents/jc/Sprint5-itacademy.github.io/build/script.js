@@ -3,8 +3,8 @@ let reportAcudits = [];
 let reportJokes = [];
 let respuesta = document.getElementById("respuesta")
 let contenido_div = document.getElementById("scores_button")
-let contador1=0;
-let contador2=0;
+let contador1 = 0;
+let contador2 = 0;
 apiWeather()
 // Función asincrónica que se encarga de hacer una petición a la API de chistes proporcionada por It Academy.
 async function chistesItAcademyApi() {
