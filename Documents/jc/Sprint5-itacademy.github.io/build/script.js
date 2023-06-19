@@ -42,6 +42,8 @@ function pintar_botones() {
         <button id="igual" class="col-3"><i class="fas fa-meh fa-2x"></i></button>
         <button id="dissLike" class="col-3"><i class="fas fa-frown fa-2x"></i></button>`
 
+
+        // esto no esta bien
     document.getElementById('like').addEventListener('onclick', () => asignar_score(1));
     document.getElementById('igual').addEventListener('onclick', () => asignar_score(2));
     document.getElementById('dissLike').addEventListener('onclick', () => asignar_score(3));
