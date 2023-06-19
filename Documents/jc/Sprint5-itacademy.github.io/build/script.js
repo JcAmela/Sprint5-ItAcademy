@@ -1,11 +1,11 @@
 // DOM //
 let reportAcudits = [];
 let reportJokes = [];
-let boton = document.getElementById("boton")
 let respuesta = document.getElementById("respuesta")
 let contenido_div = document.getElementById("scores_button")
-boton.onclick = chistesItAcademyApi;
-
+let contador1=0;
+let contador2=0;
+apiWeather()
 // Función asincrónica que se encarga de hacer una petición a la API de chistes proporcionada por It Academy.
 async function chistesItAcademyApi() {
 
@@ -16,7 +16,8 @@ async function chistesItAcademyApi() {
             }
         })
         let data = await API_URL.json()
-        guardarDatos(data)
+        guardarDatos(data.joke)
+        contador1++
         return data.joke
 
     } catch (error) {
@@ -46,7 +47,7 @@ function pintar_botones() {
 // Función encargada de guardar el chiste obtenido de la API en un array, además de invocar la función para mostrar este chiste en pantalla.
 function guardarDatos(datos) {
     reportAcudits.push(datos)
-    mostrar_chiste(datos.joke)
+    mostrar_chiste(datos)
 }
 
 // Función que se encarga de asignar una puntuación a un chiste específico. Si el chiste ya tiene una puntuación, esta se sobrescribe con el nuevo valor.
@@ -91,7 +92,30 @@ async function apiWeather() {
 }
 
 // Función que se encarga de mostrar en pantalla la información sobre el clima actual obtenida de la API.
-apiWeather()
 function tiempo(informacion) {
     document.getElementById("tiempo").innerHTML=`Hoy en ${informacion.location.name} hace una temperatura de: ${informacion.current.temp_c}ºC a tiempo real. <br> Según la información proporcionada por: https://rapidapi.com/weatherapi.`
+}
+
+
+async function chuckApi (){
+    const url = 'https://api.chucknorris.io/jokes/random';
+    const options = {
+        method: 'GET',
+        headers: {
+            'accept': 'application/json'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        guardarDatos(result.value)
+        contador2++
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function intercalar_chistes (){
+contador1 <= contador2 ? chistesItAcademyApi() : chuckApi ()
 }
