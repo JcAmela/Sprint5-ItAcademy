@@ -1,34 +1,66 @@
-# Sprint5-ItAcademy.github.io-IT Academy Barcelona Activa - Sprint 5 🚀
-¡Hola! Soy Juan Carlos Amela. Este repositorio contiene los ejercicios del quinto sprint del curso de programación de IT Academy Barcelona Activa.
+# 🚀 IT Academy Barcelona Activa - Sprint 5 🚀
 
-En este sprint, hemos llevado la programación en JavaScript al siguiente nivel, introduciendo TypeScript y las APIs. Se nos asignó la tarea de trabajar con la API de chistes de "icanhazdadjoke", proporcionada por IT Academy, y añadir más funcionalidades usando APIs adicionales que encontré y documenté por mi cuenta.
+¡Bienvenido a mi repositorio! Soy Juan Carlos Amela y este es el quinto sprint del curso de programación de IT Academy Barcelona Activa. Durante este sprint, nos adentramos en el fascinante mundo de las APIs y el manejo de datos utilizando TypeScript.
 
-🎯 Características del proyecto
-El proyecto es una aplicación de chistes que:
+## 🎯 Objetivo del Proyecto
 
-Hace uso de la API de chistes de "icanhazdadjoke".
-Utiliza la API de chistes de Chuck Norris.
-Recoge datos climáticos en tiempo real mediante la API de Weatherapi.com.
-Permite a los usuarios valorar los chistes, y registra la puntuación y la fecha de la valoración.
-Intercala los chistes de ambas fuentes para variedad.
-Utiliza TypeScript para mejorar la eficiencia del código y reducir los errores.
-📚 Estructura del código
-El código se estructura en varias funciones que realizan diferentes tareas:
+Este proyecto es un caleidoscopio de la capacidad y versatilidad de las APIs. El software desarrollado combina dos APIs de chistes, icanhazdadjoke y chucknorris.io, intercalando entre ambas. Pero no nos detuvimos allí, el usuario puede asignar una puntuación a los chistes y esta información se almacena en un array, junto con la fecha en que se puntuó. Además, utilizamos la API de Weatherapi para obtener y mostrar la información meteorológica actual.
 
-chistesItAcademyApi(): Realiza una petición a la API de "icanhazdadjoke" y devuelve un chiste.
-chuckApi(): Realiza una petición a la API de chistes de Chuck Norris y devuelve un chiste.
-mostrar_chiste(): Muestra el chiste obtenido en la pantalla.
-pintar_botones(): Genera el contenido HTML para los botones de valoración de los chistes.
-guardarDatos(): Guarda el chiste obtenido de la API en un array.
-asignar_score(): Asigna una puntuación a un chiste.
-fecha_valoracion(): Asigna la fecha actual a la valoración de un chiste.
-apiWeather(): Realiza una petición a la API de Weatherapi.com para obtener información sobre el clima actual.
-tiempo(): Muestra en pantalla la información sobre el clima actual obtenida de la API.
-intercalar_chistes(): Intercala los chistes de las dos APIs.
-💻 Código
-Todo el código está disponible para ser revisado y utilizado. La mayor parte de la implementación se realizó en TypeScript. Si tienes alguna sugerencia para mejorarlo, ¡me encantaría escucharla!
+## 💻 Código 
 
-🌐 Recursos
-Los datos de los chistes fueron proporcionados por IT Academy Barcelona Activa a través de la API de "icanhazdadjoke". Las demás APIs fueron investigadas y utilizadas por mí como parte de este proyecto. Todo el trabajo de implementación y codificación fue realizado por mí como parte del curso.
+El código está escrito en TypeScript y es totalmente abierto para revisión y utilización. Si tienes algún feedback o sugerencias de mejora, ¡me encantaría escucharlas!
 
-Espero que esto sea lo que buscas. Si necesitas más detalles o cambios, no dudes en decírmelo.
+Aquí te presento un resumen de las principales funciones del programa:
+
+- `chistesItAcademyApi`: Realiza una petición a la API de icanhazdadjoke para obtener un chiste.
+- `chuckApi`: Realiza una petición a la API de chucknorris.io para obtener un chiste.
+- `mostrar_chiste`: Muestra el chiste obtenido desde la API en el elemento HTML de respuesta.
+- `pintar_botones`: Genera el contenido HTML para los botones de puntuación de los chistes y les asigna el respectivo evento onclick.
+- `guardarDatos`: Guarda el chiste obtenido de la API en un array.
+- `asignar_score`: Asigna una puntuación a un chiste específico. Si el chiste ya tiene una puntuación, esta se sobrescribe con el nuevo valor.
+- `fecha_valoracion`: Asigna la fecha actual a la puntuación de un chiste en particular.
+- `apiWeather`: Realiza una petición a una API para obtener información sobre el clima actual.
+- `tiempo`: Muestra en pantalla la información sobre el clima actual obtenida de la API.
+- `intercalar_chistes`: Llama a las funciones `chistesItAcademyApi` y `chuckApi` de forma intercalada.
+
+## 🛠️ Tecnologías utilizadas
+
+- JavaScript
+- TypeScript
+- HTML/CSS
+- APIs Rest
+
+## 🌐 Recursos 
+
+La API de icanhazdadjoke fue proporcionada por IT Academy Barcelona Activa. Las demás APIs fueron encontradas por mí, y he leído y seguido sus respectivas documentaciones para su correcta implementación.
+
+## 🚦 Instrucciones de uso
+
+Para ejecutar el proyecto localmente, sigue estos pasos:
+
+1. Clona este repositorio
+2. Ejecuta `npm install` para instalar todas las dependencias
+3. Ejecuta `npm start` para iniciar el servidor
+4. Abre tu navegador y visita `http://localhost:3000` para ver la aplicación en acción!
+
+## 📊 Datos y Resultados
+
+Este proyecto me ha permitido entender mejor la utilidad y el potencial de las APIs y cómo integrarlas con TypeScript para desarrollar aplicaciones robustas y dinámicas. Aquí hay una pequeña muestra de los datos que se pueden generar con este proyecto:
+
+- Número total de chistes obtenidos: X
+- Puntuación media de los chistes: X
+- Número de chistes con una puntuación superior a 8: X
+- Ciudad con la temperatura más alta según la API de Weatherapi: X
+
+## 📚 Aprendizajes
+
+El desarrollo de este proyecto me ha permitido aprender sobre:
+
+- La realización de peticiones a APIs externas y el manejo de datos obtenidos.
+- La manipulación de datos utilizando JavaScript y TypeScript.
+- La creación de un frontend dinámico para mostrar datos en tiempo real.
+
+## 📧 Contacto
+
+Si tienes alguna pregunta, comentario o sugerencia, no dudes en contactarme. ¡Me encantaría conocer tus pensamientos!
+
