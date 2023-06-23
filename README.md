@@ -22,7 +22,7 @@ Aquí te presento un resumen de las principales funciones del programa:
 - `apiWeather`: Realiza una petición a una API para obtener información sobre el clima actual.
 - `tiempo`: Muestra en pantalla la información sobre el clima actual obtenida de la API.
 - `intercalar_chistes`: Llama a las funciones `chistesItAcademyApi` y `chuckApi` de forma intercalada.
-
+ 
 ## 🛠️ Tecnologías utilizadas
 
 - JavaScript
