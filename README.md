@@ -2,6 +2,8 @@
 
 ¡Bienvenido a mi repositorio! Soy Juan Carlos Amela y este es el quinto sprint del curso de programación de IT Academy Barcelona Activa. Durante este sprint, nos adentramos en el fascinante mundo de las APIs y el manejo de datos utilizando TypeScript.
 
+¡Mira la aplicación en acción! [Haga clic aquí](https://jcamela.github.io/Sprint5-ItAcademy.github.io/)
+
 ## 🎯 Objetivo del Proyecto
 
 Este proyecto es un caleidoscopio de la capacidad y versatilidad de las APIs. El software desarrollado combina dos APIs de chistes, icanhazdadjoke y chucknorris.io, intercalando entre ambas. Pero no nos detuvimos allí, el usuario puede asignar una puntuación a los chistes y esta información se almacena en un array, junto con la fecha en que se puntuó. Además, utilizamos la API de Weatherapi para obtener y mostrar la información meteorológica actual.
@@ -63,4 +65,3 @@ El desarrollo de este proyecto me ha permitido aprender sobre:
 ## 📧 Contacto
 
 Si tienes alguna pregunta, comentario o sugerencia, no dudes en contactarme. ¡Me encantaría conocer tus pensamientos!
-
