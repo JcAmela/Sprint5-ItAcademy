@@ -2,7 +2,7 @@
 
 ¡Bienvenido a mi repositorio! Soy Juan Carlos Amela y este es el quinto sprint del curso de programación de IT Academy Barcelona Activa. Durante este sprint, nos adentramos en el fascinante mundo de las APIs y el manejo de datos utilizando TypeScript.
 
-¡Mira la aplicación en acción! [Haga clic aquí](https://jcamela.github.io/Sprint5-ItAcademy.github.io/)
+[¡Mira la aplicación en acción!](https://jcamela.github.io/Sprint5-ItAcademy)
 
 ## 🎯 Objetivo del Proyecto
 
